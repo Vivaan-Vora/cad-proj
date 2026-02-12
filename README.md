@@ -28,3 +28,27 @@ The part was built around three engineering priorities: stable support under pho
 | cable_cutout_height | 14 mm | Height of cable cutout |
 
 Full parameter notes are documented in [docs/parameters.md](docs/parameters.md).
+
+## Engineering Notes
+
+- **Parametric structure:** Slot width, stand angle, base depth, and fillet radius are stored as Onshape variables, so design changes propagate through extrudes, cuts, and edge treatments automatically.
+- **Constraint-driven sketching:** The base profile and slot geometry were fully defined before feature creation to avoid downstream rebuild errors.
+- **Functional cutout sizing:** The cable channel was sized at 20 x 14 mm to pass a standard charging connector without binding against the base wall.
+- **Print-oriented detailing:** 3 mm fillets were applied to external edges to improve FDM surface quality and reduce stress concentration at sharp corners.
+- **Stability geometry:** The 80 mm base depth and 12 mm platform height were selected to lower the center of support and resist tipping when a phone is inserted.
+
+## Design Workflow
+
+1. Base profile sketched and fully constrained on the front plane
+2. Base platform extruded to establish the support footprint
+3. Phone slot cut on the angled cradle face
+4. Cable routing cutout added to the rear of the base
+5. Chamfers and fillets applied for usability and print quality
+6. Dimensions reviewed against target phone geometry and print constraints
+
+## Project Takeaways
+
+- Parametric CAD is most reliable when sketches are fully constrained before moving into 3D features.
+- Small dimensional changes, such as slot depth or cutout width, have an outsized effect on usability and should be tested early.
+- Fillets and chamfers need to be planned around interior corners, since tight geometry can cause feature failures until the underlying edges are prepared.
+- Building a complete part end to end, from sketch to exportable mesh, is an effective way to connect CAD theory with practical design decisions.
