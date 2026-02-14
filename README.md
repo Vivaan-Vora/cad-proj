@@ -53,6 +53,14 @@ Full parameter notes are documented in [docs/parameters.md](docs/parameters.md).
 - Fillets and chamfers need to be planned around interior corners, since tight geometry can cause feature failures until the underlying edges are prepared.
 - Building a complete part end to end, from sketch to exportable mesh, is an effective way to connect CAD theory with practical design decisions.
 
+## Renders
+
+![65DegreeCradle front view](images/final_front.png)
+
+![65DegreeCradle side view](images/final_side.png)
+
+![65DegreeCradle isometric view](images/final_iso.png)
+
 ## Tools
 
 - **Onshape** for parametric part modeling and export
